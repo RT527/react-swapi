@@ -6,7 +6,6 @@ import PilotList from "../../components/PilotList/PilotList"
 const StarshipPage = () => {
   const [starshipDetails, setStarshipDetails] = useState([])
   const { starshipId } = useParams()
-  const tableHeight = 40
 
   useEffect(() => {
     const fetchDetails = async () => {
