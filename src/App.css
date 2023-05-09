@@ -1,42 +1,99 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: black;
+  width: 100%;
+  padding: 18px;
+  margin-bottom: 20px;
+}
+
+header > h1 {
+  margin: 0;
+  color: yellow;
+  text-shadow: 2px 2px #000;
+  font-family: 'Star Jedi', sans-serif;
+  font-size: 48px;
+}
+
+.starship-info-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.starship-info-card {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  min-width: 330px;
+  background-color: #333;
+  padding: 10px;
+  border-radius: 4px;
+  box-shadow: 2px 2px 8px rgba(255, 255, 255, .5);
+}
+
+.btn-container {
+  display: flex;
+  justify-content: center;
+}
+
+.return-btn {
+  background-color: #222;
+  padding: 4px;
+  width: 75px;
   text-align: center;
+  border-radius: 4px;
+  box-shadow: 2px 2px 8px rgba(255, 255, 255, .5);
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.return-btn:hover {
+  background-color: rgb(83, 82, 82);
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.pilot-container > h3 {
+  margin: 0;
+  color: yellow;
+  text-shadow: 1px 1px #000;
+  font-family: 'Star Jedi', sans-serif;
+  font-size: 28px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+table {
+  width: 100%;
+  border-collapse: collapse;
+  box-shadow: 2px 2px 8px rgba(255, 255, 255, .5);
 }
 
-.card {
-  padding: 2em;
+.table-data {
+  margin: 0;
+  padding: 0;
+  color: #ddd;
+  text-shadow: 1px 1px #000;
+  font-family: 'Star Jedi', sans-serif;
+  font-size: 20px;
 }
 
-.read-the-docs {
-  color: #888;
+.ship-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 250px;
+  height: 100px;
+  background-color: #333;
+  padding: 10px;
+  border-radius: 4px;
+  box-shadow: 2px 2px 8px rgba(255, 255, 255, .5);
+}
+
+.ship-container:hover {
+  background-color: rgb(83, 82, 82);
+}
+
+a {
+  color: yellow;
+  text-decoration: none;
+  font-family: 'Star Jedi', sans-serif;
+  font-size: 20px;
 }
