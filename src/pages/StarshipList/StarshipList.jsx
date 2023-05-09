@@ -2,38 +2,34 @@ import { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
 import { getAllStarships } from "../../services/sw-api"
 
-function StarshipList() {
+const StarshipList = () => {
   const [starshipList, setStarshipList] = useState([])
 
   useEffect(() => {
-    async function fetchStarships() {
-      const data = await getAllStarships()
-      setStarshipList(data.results)
+    const fetchStarshipList = async () => {
+      const starshipData = await getAllStarships()
+      setStarshipList(starshipData)
     }
-    fetchStarships()
+    fetchStarshipList()
   }, [])
 
-  if (!starshipList.length) {
-    return <h3>Loading your ships...</h3>
-  }
+  if(!starshipList.results?.length) return <h1>Loading ⭐️🚢's...</h1>
 
-  return (
+  return (  
     <main>
-      <h1>You'll need a pilot</h1>
-      <div className="starship-container">
-        {starshipList.map((starship, index) => (
-          <Link
-            key={index}
-            className="starship-card"
-            to={`/starships/${starship.url.split("/")[5]}/`}
-          >
+      {starshipList.results.map((starship, idx) => 
+        <div className="ship-container" key={idx}>
+          <Link to={`/${starship.url.slice(32)}`}>
             {starship.name}
           </Link>
-        ))}
-      </div>
+        </div>
+      )}
     </main>
   )
 }
 
 export default StarshipList
+
+
+
 
